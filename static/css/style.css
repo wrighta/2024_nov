@@ -1,0 +1,318 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #333;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+/* Content area */
+.content {
+    padding: 2em;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+
+/* Responsive category container */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 1em;
+}
+
+/* Category card styling */
+.category-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 280px;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.category-card a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.category-card a:hover {
+    text-decoration: underline;
+}
+
+/* Recipes container */
+.recipes-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cards container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Recipe card */
+.recipe-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+/* Recipe image */
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit:scale-down;
+}
+
+/* Recipe title */
+.recipe-title {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+}
+
+.recipe-title:hover {
+    text-decoration: underline;
+}
+
+/* Card actions */
+.card-actions {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+    color: #fff;
+}
+
+/* Edit button */
+.edit-btn {
+    background-color: #ffc400;
+}
+
+.edit-btn:hover {
+    background-color: #b35f00;
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Form container */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Input fields */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .category-card,
+    .recipe-card {
+        width: 100%;
+    }
+
+    .category-container,
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Styles for JS error messages */
+/* Error field styling */
+.error {
+    border: 1px solid #dc3545;
+    background-color: #ffe6e6;
+}
+
+/* Error message styling */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* CSS for the delete confirmation message */
+
+
+/* Confirmation Dialog Overlay */
+.confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Confirmation Dialog Box */
+.confirmation-dialog {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.confirmation-dialog .btn {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: rgb(202, 32, 32);
+    cursor: pointer;
+}
+
+
+/* Contact Details Styling */
+/* Contact Details List */
+.contact-details {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    
+}
+
+.contact-details li {
+    margin-bottom: 1rem; /* Add space between each item */
+    font-size: 1rem; /* Set a readable font size */
+    line-height: 1.5; /* Improve spacing for multi-line content */
+    color: #333; /* Dark text for good contrast */
+    display: flex; /* Use flexbox for layout */
+    align-items: centre; /* Vertically align content */
+}
+
+.contact-details strong {
+    font-weight: bold; /* Highlight the label */
+    margin-right: 0.5rem; /* Add space after the label */
+    flex-shrink: 0; /* Prevent the label from shrinking */
+}
+
+.contact-details a {
+    color: #0073e6; /* Blue colour for links */
+    text-decoration: none; /* Remove underlines by default */
+}
+
+.contact-details a:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+}

@@ -1,0 +1,16 @@
+Connection String
+___________________
+postgresql://receipe_db_x4z3_user:9BTJONCJXozP65Wt0sEMyb7tkCOcMEmR@dpg-csv1ob52ng1s73dqv3i0-a.frankfurt-postgres.render.com/receipe_db_x4z3
+
+Components
+___________
+postgresql
+://
+
+receipe_db_x4z3_user
+:
+9BTJONCJXozP65Wt0sEMyb7tkCOcMEmR
+@
+dpg-csv1ob52ng1s73dqv3i0-a.frankfurt-postgres.render.com
+/
+receipe_db_x4z3

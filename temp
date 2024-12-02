@@ -1,0 +1,51 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Recipes Website</h1>
+    <p>Explore our delicious recipes by category:</p>
+
+    <!-- display the Category Images from as Links -->
+    <div class="category-container">
+        {% for category in categories %}
+            <div class="category-card">
+             
+                <a href="{{ url_for('category_recipes', category_id=category.id) }}">
+                    <img src="{{ url_for('static', filename='/images/' + category.image) }}" alt="{{ category.name }}">
+                 
+                    <h3>{{ category.name }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+@app.route('/recipes')
+def recipes():
+    all_recipes = Recipe.query.all()  # Fetch all recipes
+    return render_template('recipes.html', recipes=all_recipes)
+
+@app.route('/recipe/<int:id>')
+def recipe_detail(id):
+    recipe = Recipe.query.get_or_404(id)
+    return render_template('recipe.html', recipe=recipe)
+
+@app.route('/recipes/<int:category_id>')
+def category_recipes(category_id):
+    category = Category.query.get_or_404(category_id)
+    recipes = Recipe.query.filter_by(category_id=category_id).all()
+    return render_template('recipes.html', category=category, recipes=recipes)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+

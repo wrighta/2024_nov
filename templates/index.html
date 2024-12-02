@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Recipes Website</h1>
+    <p>Explore our delicious recipes by category:</p>
+
+    <!-- display the Category Images from as Links -->
+    <div class="category-container">
+        {% for category in categories %}
+            <div class="category-card">
+             
+                <a href="{{ url_for('category_recipes', category_id=category.id) }}">
+                    <img src="{{ url_for('static', filename='images/' + category.image) }}" alt="{{ category.name }}">
+                 
+                    <h3>{{ category.name }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
